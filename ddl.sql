@@ -14,19 +14,28 @@ CREATE TABLE public.projects (
 );
 
 
+-- public.menu_selected definition
+
 -- Drop table
 
--- DROP TABLE public.menu_selected
+-- DROP TABLE public.menu_selected;
 
 CREATE TABLE public.menu_selected (
 	id varchar(100) NOT NULL,
-	"name" varchar(30) NOT NULL,
+	name varchar(30) NOT NULL,
 	"date" varchar(30) NOT NULL,
 	menu varchar(50) NOT NULL,
 	created date NULL,
 	updated date NULL,
+	projectid varchar(100) NOT NULL,
+	division varchar(30) NULL,
 	CONSTRAINT pk PRIMARY KEY (id)
 );
+
+
+-- public.menu_selected foreign keys
+
+ALTER TABLE public.menu_selected ADD CONSTRAINT menu_selected_projects_fk FOREIGN KEY (projectid) REFERENCES projects(id);
 
 
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
