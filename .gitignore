@@ -36,4 +36,3 @@ target
 **/application.properties
 
 *k8s*.yaml   
-*.sh
