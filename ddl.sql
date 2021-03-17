@@ -43,6 +43,7 @@ CREATE TABLE public.users (
 	updated date NULL,
 	description varchar(300) NULL,
 	projectid varchar(100) NULL,
+	useyn CHAR(1) NOT NULL DEFAULT 'Y',
 	CONSTRAINT users_pkey PRIMARY KEY (id),
 	CONSTRAINT users_projectid_fkey FOREIGN KEY (projectid) REFERENCES projects(id)
 );
@@ -58,6 +59,7 @@ CREATE TABLE public.restaurants (
 	updated date NULL,
 	description varchar(300) NULL,
 	projectid varchar(100) NULL,
+	useyn CHAR(1) NOT NULL DEFAULT 'Y',
 	CONSTRAINT restaurants_pkey PRIMARY KEY (id),
 	CONSTRAINT restaurants_projectid_fkey FOREIGN KEY (projectid) REFERENCES projects(id)
 );
